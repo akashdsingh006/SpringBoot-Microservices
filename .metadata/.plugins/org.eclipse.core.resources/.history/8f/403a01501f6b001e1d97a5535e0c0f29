@@ -1,0 +1,10 @@
+package com.hotelservice.exception;
+
+
+public class ResourceNotFoundException extends Exception{
+	
+	public ResourceNotFoundException()
+	{
+		super("No hotel found for this id");
+	}
+}

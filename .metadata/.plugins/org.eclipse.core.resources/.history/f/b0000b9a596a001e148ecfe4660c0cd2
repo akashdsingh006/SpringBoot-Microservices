@@ -1,0 +1,14 @@
+package com.user.service.services;
+
+import java.util.List;
+
+import com.user.service.entity.User;
+
+public interface UserService {
+
+	public User addUser(User user);
+
+	public List<User> getAllUsers();
+
+	public User getUser(Integer userId);
+}

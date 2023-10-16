@@ -1,0 +1,14 @@
+server.port=8081
+
+#Database Config
+spring.datasource.name=user
+spring.datasource.url=jdbc:postgresql://localhost:5432/microservices
+spring.datasource.username=postgres
+spring.datasource.password=akash
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+
+#Hibernate Config
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;RatingRepository.java&apos; to &apos;RatingService/src/main/java/com.ratingservice.repository&apos;&#x0D;&#x0A;- Original project: &apos;RatingService&apos;&#x0D;&#x0A;- Destination element: &apos;RatingService/src/main/java/com.ratingservice.repository&apos;&#x0D;&#x0A;- Original element: &apos;com.ratingservice.RatingRepository.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ratingservice.repository" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ratingservice{RatingRepository.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1697371726867" units="1" version="1.0"/>
+</session>
