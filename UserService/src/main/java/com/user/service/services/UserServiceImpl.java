@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.user.service.entity.User;
 import com.user.service.exceptions.ResourceNotFoundException;
+import com.user.service.external.services.HotelService;
 import com.user.service.model.Hotel;
 import com.user.service.model.Rating;
 import com.user.service.repository.UserRepository;
@@ -23,6 +24,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private RestTemplate restTemplate;
 
+	@Autowired
+	private HotelService hotelService;
+	
 	@Override
 	public User addUser(User user) {
 		return this.userRepository.save(user);
@@ -48,8 +52,12 @@ public class UserServiceImpl implements UserService {
 		// user.setUserRatings(ratingForUser);
 
 		List<Rating> ratingList = Arrays.stream(ratingForUser).toList();
+		
 		List<Rating> ratingWithHotels = ratingList.stream().map(rating -> {
-			Hotel hotel = restTemplate.getForObject("http://HOTEL-SERVICE/hotels/" + rating.getHotelId(), Hotel.class);
+			//Hotel hotel = restTemplate.getForObject("http://HOTEL-SERVICE/hotels/" + rating.getHotelId(), Hotel.class);
+			
+			
+			Hotel hotel=hotelService.getHotel(rating.getHotelId());
 			rating.setHotel(hotel);
 			return rating;
 		}).collect(Collectors.toList());
