@@ -1,0 +1,43 @@
+User-Service API
+---------------------------------------
+GET - http://localhost:8081/users/1
+
+Data:
+--------
+{
+    "userId": 1,
+    "userName": "Akash",
+    "userEmail": "akash@gmail.com",
+    "phoneNumber": 9875387092,
+    "userRatings": [
+        {
+            "ratingId": 1,
+            "userId": 1,
+            "hotelId": 1,
+            "rating": 8,
+            "remarks": "Very impressive",
+            "hotel": {
+                "hotelId": 1,
+                "hotelName": "Green Hub",
+                "hotelLocation": "Kolkata",
+                "hotelRemarks": "Nice interior with excellent facilities"
+            }
+        },
+        {
+            "ratingId": 2,
+            "userId": 1,
+            "hotelId": 2,
+            "rating": 7,
+            "remarks": "Not satisfied can have nice staffs",
+            "hotel": {
+                "hotelId": 2,
+                "hotelName": "JW Marriott",
+                "hotelLocation": "Kolkata",
+                "hotelRemarks": "Nice food and hospitality"
+            }
+        }
+    ]
+}
+
+__________________________________________________________________________
+
