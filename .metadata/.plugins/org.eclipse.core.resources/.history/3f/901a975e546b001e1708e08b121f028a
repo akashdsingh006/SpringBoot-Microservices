@@ -1,5 +1,0 @@
-package com.ratingservice.services;
-
-public interface RatingService {
-
-}

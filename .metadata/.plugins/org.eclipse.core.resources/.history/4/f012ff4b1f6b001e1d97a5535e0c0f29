@@ -1,5 +1,0 @@
-package com.hotelservice.exception;
-
-public class ResourceNotFoundException {
-
-}

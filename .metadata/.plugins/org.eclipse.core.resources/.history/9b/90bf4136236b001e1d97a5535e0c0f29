@@ -1,5 +1,0 @@
-package com.hotelservice.payload;
-
-public class ApiResponse {
-
-}
