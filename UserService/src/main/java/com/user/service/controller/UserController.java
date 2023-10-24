@@ -19,6 +19,7 @@ import com.user.service.services.UserService;
 
 import ch.qos.logback.classic.Logger;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 
 @RestController
 @RequestMapping("/users")
@@ -45,8 +46,9 @@ public class UserController {
 	
 	int retryCount=1;
 	@GetMapping("/{userId}")
-	@CircuitBreaker(name = "ratingHotelBreaker" , fallbackMethod = "ratingHotelFallback")
+	//@CircuitBreaker(name = "ratingHotelBreaker" , fallbackMethod = "ratingHotelFallback")
 	//@Retry(name="ratingHotelService" , fallbackMethod = "ratingHotelFallback")
+	@RateLimiter(name = "userRateLimiter" , fallbackMethod = "ratingHotelFallback")
 	public ResponseEntity<User> getUser(@PathVariable Integer userId) throws ResourceNotFoundException
 	{
 		User user = userService.getUser(userId);
